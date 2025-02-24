@@ -48,7 +48,7 @@ public static class WorldPhysics
         // Определяем пересечение местной горизонтальной плоскости "земли" и мировой плоскости (нужна точка, принадлежащая горизонтальной плоскости):
         Vector3 grndOrig = projOnWorldPlane * terrainRadius;
         Vector3 target = grndOrig - GetLocalGravity(position) * GO_HOME_POINT_H;
-        return (target - position).normalized * (position - target).magnitude * GO_HOME_COEF;
+        return (target - position) * GO_HOME_COEF;
     }
 
     static public bool IsInOuterSpace(Vector3 position)
